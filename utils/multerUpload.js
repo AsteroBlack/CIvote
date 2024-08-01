@@ -1,7 +1,6 @@
 const multer = require('multer')
 const path = require('path')
 
-
 // storage engine 
 
 const storage = multer.diskStorage({
@@ -14,10 +13,8 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage: storage,
     limits: {
-        fileSize: 10000
+        fileSize: 10 * 1024 * 1024 //limite de taille de fichier 10MB
     }
 })
 
-const inscription = async (req, res) => {
-    
-}
+module.exports = upload
